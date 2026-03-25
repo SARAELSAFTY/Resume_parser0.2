@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Analyzer - ATS &amp; Job Match</title>
+    <link rel="stylesheet" href="/static/style/styles.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            padding: 40px 20px;
+            margin-bottom: 0;
+            border-bottom: 2px solid #00d4ff;
+            text-align: left;
+        }
+
+        .main-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .title-section {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .main-title {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #a0a0a0;
+            letter-spacing: 1px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: rgba(0, 212, 255, 0.05);
+            border: 2px solid #404040;
+            border-radius: 12px;
+            padding: 50px 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(0,212,255,0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .card:hover {
+            border-color: #00d4ff;
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .card:hover::before { opacity: 1; }
+
+        .card-icon {
+            font-size: 56px;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        .card h2 {
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 15px;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #a0a0a0;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .card-link {
+            display: inline-block;
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border: 2px solid #00d4ff;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        .card-link:hover {
+            background: #00d4ff;
+            color: #0f1729;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #606060;
+            font-size: 14px;
+            border-top: 1px solid #404040;
+        }
+
+        @media (max-width: 768px) {
+            .main-title { font-size: 36px; }
+            .subtitle { font-size: 16px; }
+            .cards-grid { grid-template-columns: 1fr; gap: 30px; }
+            .card { padding: 40px 30px; }
+            .card h2 { font-size: 24px; }
+            .title-section { margin-bottom: 50px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">// CV_ANALYZER</div>
+    </div>
+
+    <div class="main-container">
+        <div class="content" style="max-width:1200px;width:100%">
+            <div class="title-section">
+                <h1 class="main-title">CV Analyzer</h1>
+                <p class="subtitle">Optimize Your Resume for ATS &amp; Job Matching</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">💼</div>
+                    <h2>ATS Score</h2>
+                    <p>Upload your CV to get an ATS compatibility score and keyword analysis powered by NLP &amp; NER</p>
+                    <a href="/templates/ats.html" class="card-link">Get Started</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🔍</div>
+                    <h2>Job Match</h2>
+                    <p>Compare your CV against a job description for deep skills compatibility matching</p>
+                    <a href="/templates/job_proposal.html" class="card-link">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>CV Analyzer &bull; Powered by AI &bull; &copy; 2026</p>
+    </div>
+</body>
+</html>
