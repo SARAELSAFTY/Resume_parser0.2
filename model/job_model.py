@@ -1,28 +1,3 @@
-"""
-models/job_model.py
---------------------
-Job-proposal comparison using two complementary models:
-
-1. SentenceTransformer  (all-MiniLM-L6-v2)
-   – Whole-document semantic similarity.
-
-2. SentenceTransformer  (paraphrase-MiniLM-L6-v2)
-   – Sentence-level skill detection; handles paraphrases
-     (e.g. "Postgres" ↔ "PostgreSQL").
-
-3. spaCy NER
-   – Extracts key entities (orgs, tools, roles) for UI highlighting.
-
-FIX #4  — unload sets globals to None before deleting names.
-FIX #5  — load_job_models() logs each step with context on failure.
-FIX #8  — A composite score is computed from BOTH semantic similarity AND
-           skill-match score with documented weights (0.4 / 0.6), so the two
-           approaches are reconciled into a single authoritative number instead
-           of being returned as separate, unrelated floats.
-FIX #10 — Returns a typed dict that is validated against CompareSkillsResponse
-           in schemas.py.
-"""
-
 from __future__ import annotations
 
 import logging
