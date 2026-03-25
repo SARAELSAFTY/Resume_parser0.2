@@ -1,19 +1,3 @@
-"""
-models/ats_model.py
---------------------
-ATS scoring using sentence-level matching per section.
-
-Each section is scored by:
-  1. Splitting the CV into sentences
-  2. Finding the best-matching sentence for each anchor phrase
-  3. Taking the mean of those best matches (not just the max)
-  4. Normalising the raw cosine similarity to a 0-100 scale using
-     a realistic expected range (0.15 – 0.55) so scores spread
-     meaningfully across the full range instead of clustering at 30-50.
-
-Persistence: every scored resume is appended to data/ats_results.json.
-"""
-
 from __future__ import annotations
 
 import json
