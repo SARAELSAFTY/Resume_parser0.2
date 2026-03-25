@@ -1,22 +1,3 @@
-"""
-models/ocr_model.py
---------------------
-Handles all document-to-text extraction:
-  - PDF    → PyPDF2
-  - DOCX   → python-docx
-  - Image  → Microsoft TrOCR (microsoft/trocr-base-printed)
-
-FIX #1 & #2 — file-pointer bug
-    read_and_validate_upload() reads bytes ONCE and returns (bytes, content_type).
-    All downstream functions receive bytes — no UploadFile is ever re-read.
-
-FIX #3 — the upload field that accepts any document is now called `document_file`
-    everywhere in routes (was: `image`).
-
-FIX #4 — unload sets globals to None before deleting names so the module scope
-    no longer holds a reference, letting GC reclaim memory.
-"""
-
 from __future__ import annotations
 
 import io
