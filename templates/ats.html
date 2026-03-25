@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Score - CV Analyzer</title>
+    <link rel="stylesheet" href="/static/style/styles.css">
+    <style>
+        body { padding: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>// ATS_SCORE</h1>
+            <button class="back-btn" onclick="window.location.href='/'">← Back</button>
+        </div>
+
+        <div class="content">
+            <!-- File Upload -->
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📄</div>
+                <h3>Drop your CV here</h3>
+                <p>or <span style="color:#00d4ff;cursor:pointer;">click to browse</span></p>
+                <p style="font-size:12px;margin-top:10px;">Supports PDF, Word (.docx), or plain text</p>
+                <input type="file" id="fileInput" class="file-input"
+                       accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg,.webp">
+            </div>
+
+            <div class="or-divider"><span>OR PASTE TEXT</span></div>
+
+            <!-- Text area -->
+            <div class="textarea-container">
+                <label>Your CV Text</label>
+                <textarea id="cvText" placeholder="Paste your CV text here..."></textarea>
+            </div>
+
+            <!-- Actions -->
+            <div class="button-group">
+                <button class="btn-primary" onclick="getAtsScore()">Get ATS Score</button>
+                <button class="btn-secondary" onclick="clearForm()">Clear</button>
+            </div>
+
+            <!-- Loading / Error / Result -->
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Analyzing CV...</p>
+            </div>
+
+            <div class="error" id="error"></div>
+
+            <div class="result-container" id="result"></div>
+        </div>
+    </div>
+
+    <script src="/static/js/ats.js"></script>
+</body>
+</html>
