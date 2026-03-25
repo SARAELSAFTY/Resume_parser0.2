@@ -1,0 +1,23 @@
+# CV / ATS Analyzer — Python dependencies
+
+# Web framework
+fastapi
+uvicorn[standard]
+
+# ML / NLP
+transformers
+sentence-transformers
+torch
+spacy
+# After installing spaCy, download a model:
+#   python -m spacy download en_core_web_sm    (fast, ~12 MB)
+#   python -m spacy download en_core_web_lg    (better NER, ~741 MB)
+
+# Document parsing
+Pillow
+PyPDF2
+python-docx
+
+# Templating (used by FastAPI)
+jinja2
+aiofiles
